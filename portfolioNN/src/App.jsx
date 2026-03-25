@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 const T = {
   pt: {
     role: "Desenvolvedor Full Stack & Automação",
-    about: "Estudante de Ciência da Computação na USP São Carlos. Construo coisas que importam — de chatbots com IA a sistemas de automação que economizam horas, passando por tecnologia assistiva que muda vidas.",
+    about: "Estudante de Engenharia Mecatrônica na USP São Carlos. Construo coisas que importam — de chatbots com IA a sistemas de automação que economizam horas, passando por tecnologia assistiva que muda vidas.",
     aboutMore: "Membro ativo do NEU-SC, o hub de empreendedorismo da USP. Minha missão é unir código, criatividade e impacto real.",
     projects: "Projetos",
     skills: "Arsenal",
@@ -11,12 +11,12 @@ const T = {
     letsWork: "Vamos trabalhar juntos?",
     status: { completed: "FINALIZADO", active: "ATIVO", inDev: "EM DEV", paused: "PAUSADO" },
     scroll: "SCROLL",
-    manifesto: "Eu não construo software genérico. Cada linha de código tem propósito, cada projeto resolve um problema real.",
+    manifesto: "Fato é, não construo softwares genéricos. Cada linha de código tem propósito, cada projeto resolve um problema real.",
     footer: "Desenhado & construído com obsessão por detalhes"
   },
   en: {
     role: "Full Stack Developer & Automation",
-    about: "Computer Science student at USP São Carlos. I build things that matter — from AI chatbots to automation systems that save hours, through assistive tech that changes lives.",
+    about: "Mechatronic Engineer student at USP São Carlos. I build things that matter — from AI chatbots to automation systems that save hours, through assistive tech that changes lives.",
     aboutMore: "Active member of NEU-SC, USP's entrepreneurship hub. My mission is to merge code, creativity, and real impact.",
     projects: "Projects",
     skills: "Arsenal",
@@ -24,16 +24,16 @@ const T = {
     letsWork: "Let's work together?",
     status: { completed: "SHIPPED", active: "ACTIVE", inDev: "IN DEV", paused: "PAUSED" },
     scroll: "SCROLL",
-    manifesto: "I don't build generic software. Every line of code has purpose, every project solves a real problem.",
+    manifesto: "The fact is, I don't build generic software. Every line of code has a purpose, every project solves a real problem.",
     footer: "Designed & built with obsessive attention to detail"
   }
 };
 
 const projects = [
-  { id: "01", name: "BlindBrowser", version: "v2.0", descPt: "Sistema de navegação assistiva para deficientes visuais. Classificação de conteúdo com 72.3% de acurácia.", descEn: "Assistive web navigation for visually impaired. Content classification at 72.3% accuracy.", tags: ["Python", "NLP", "AI"], status: "completed", accent: "#00ff88" },
-  { id: "02", name: "Rosinha", version: "ChatBot", descPt: "Chatbot híbrido WhatsApp/Instagram. Regras + Claude API + triagem inteligente para atendente humano.", descEn: "Hybrid WhatsApp/Instagram chatbot. Rules + Claude API + smart escalation to human agents.", tags: ["FastAPI", "Claude API", "Make.com"], status: "inDev", accent: "#ff3366" },
-  { id: "03", name: "AutoMKT", version: "Pipeline", descPt: "15min → 2min por post. Pipeline de automação Instagram com Google Forms, Make.com, Apify e Buffer.", descEn: "15min → 2min per post. Instagram automation pipeline with Google Forms, Make.com, Apify & Buffer.", tags: ["Make.com", "Apify", "Buffer"], status: "active", accent: "#00d4ff" },
-  { id: "04", name: "NEU-SC", version: "Website", descPt: "Redesign do hub de empreendedorismo da USP São Carlos. De vitrine estática para plataforma interativa.", descEn: "Redesign of USP São Carlos entrepreneurship hub. From static showcase to interactive platform.", tags: ["Frontend", "UX/UI", "Branding"], status: "inDev", accent: "#ffaa00" },
+  { id: "01", name: "Iniciação Científica: BlindBrowser", version: "v2.0", descPt: "Sistema de navegação assistiva para deficientes visuais. Classificação de conteúdo com 72.3% de acurácia.", descEn: "Assistive web navigation for visually impaired. Content classification at 72.3% accuracy.", tags: ["Python", "NLP", "AI"], status: "completed", accent: "#00ff88", link: "https://github.com/NogTwoo/blindbrowser-v2" },
+  { id: "02", name: "Assistente Virtual: Rosinha", version: "ChatBot", descPt: "Chatbot híbrido WhatsApp/Instagram. Regras + Claude API + triagem inteligente para atendente humano.", descEn: "Hybrid WhatsApp/Instagram chatbot. Rules + Claude API + smart escalation to human agents.", tags: ["FastAPI", "Claude API", "Make.com"], status: "inDev", accent: "#ff3366"},
+  { id: "03", name: "Projeto Low-Code: AutoMarketing", version: "Pipeline", descPt: "15min → 2min por post. Pipeline de automação Instagram com Google Forms, Make.com, Apify e Buffer.", descEn: "15min → 2min per post. Instagram automation pipeline with Google Forms, Make.com, Apify & Buffer.", tags: ["Make.com", "Apify", "Buffer"], status: "active", accent: "#00d4ff", link:"/src/assets/arq_crm_automation.png"},
+  { id: "04", name: "Núcleo de Empreendedorismo de São Carlos", version: "Website", descPt: "Redesign do hub de empreendedorismo da USP São Carlos. De vitrine estática para plataforma interativa.", descEn: "Redesign of USP São Carlos entrepreneurship hub. From static showcase to interactive platform.", tags: ["Frontend", "UX/UI", "Branding"], status: "active", accent: "#ffaa00", link: "https://www.neu-sc.com/" },
   { id: "05", name: "Nova", version: "Social", descPt: "Rede social gamer com integração direta a jogos, insights de performance e conexão global.", descEn: "Gamer social network with direct game integration, performance insights, and global connection.", tags: ["PHP", "HTML", "CSS", "Games"], status: "paused", accent: "#aa66ff" }
 ];
 
@@ -121,9 +121,19 @@ export default function Portfolio() {
         ::-webkit-scrollbar-track{background:${C.bg}}
         ::-webkit-scrollbar-thumb{background:${C.scrollbar}}
         @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+        @keyframes marquee-rev{from{transform:translateX(-50%)}to{transform:translateX(0)}}
         @keyframes float-chaos{0%,100%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(10px,-15px) rotate(3deg)}50%{transform:translate(-5px,8px) rotate(-2deg)}75%{transform:translate(12px,5px) rotate(1deg)}}
         @keyframes scan{0%{top:-5%}100%{top:105%}}
         @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:0.4}}
+        @keyframes glitch-1{0%,100%{clip-path:inset(0 0 95% 0)}20%{clip-path:inset(30% 0 50% 0)}40%{clip-path:inset(70% 0 10% 0)}60%{clip-path:inset(10% 0 70% 0)}80%{clip-path:inset(50% 0 30% 0)}}
+        @keyframes glitch-2{0%,100%{clip-path:inset(95% 0 0 0)}20%{clip-path:inset(50% 0 30% 0)}40%{clip-path:inset(10% 0 70% 0)}60%{clip-path:inset(70% 0 10% 0)}80%{clip-path:inset(30% 0 50% 0)}}
+        @keyframes flicker{0%,100%{opacity:1}92%{opacity:1}93%{opacity:0.3}94%{opacity:1}96%{opacity:0.5}97%{opacity:1}}
+        @keyframes grid-pulse{0%,100%{opacity:0.03}50%{opacity:0.08}}
+        .break-row{transition:all 0.3s}
+        .break-word{cursor:default;transition:color 0.6s cubic-bezier(0.16,1,0.3,1),letter-spacing 0.6s cubic-bezier(0.16,1,0.3,1),text-shadow 0.6s cubic-bezier(0.16,1,0.3,1)}
+        .break-line{transition:max-width 0.6s cubic-bezier(0.16,1,0.3,1),opacity 0.6s cubic-bezier(0.16,1,0.3,1)}
+        .break-row:hover .break-word{letter-spacing:3px}
+        .break-row:hover .break-line{max-width:180px!important;opacity:0.5!important}
         .vis-anim{opacity:0;transform:translateY(30px);transition:all 0.9s cubic-bezier(0.16,1,0.3,1)}
         .vis-anim.show{opacity:1;transform:translateY(0)}
         .project-row{display:flex;flex-direction:column;gap:8px;padding:20px 0;border-bottom:1px solid ${C.border};cursor:pointer;transition:all 0.5s cubic-bezier(0.16,1,0.3,1);position:relative}
@@ -155,13 +165,9 @@ export default function Portfolio() {
         }
 
           .diag-text {
-         transition: color 0.4s ease, text-shadow 0.4s ease;
-          cursor: default;
-        }
-        .diag-text:hover {
-        color: rgba(255,51,102,0.6) !important;
-        text-shadow: 0 0 30px rgba(255,51,102,0.15);
-        }
+           transition: color 0.4s ease, text-shadow 0.4s ease;
+           cursor: default;
+          }
       `}</style>
 
       <div className="scan-l"/>
@@ -249,7 +255,7 @@ export default function Portfolio() {
           <div key={p.id} className="project-row" style={{color:activeProject===i?acc(p.accent,isDark):"inherit",opacity:vis("s-proj")?1:0,transform:vis("s-proj")?"translateX(0)":"translateX(-15px)",transition:`all 0.6s cubic-bezier(0.16,1,0.3,1) ${i*0.1}s`,borderBottomColor:C.border}} onMouseEnter={()=>setActiveProject(i)} onMouseLeave={()=>setActiveProject(null)}>
             <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:"11px",color:C.textFaint}}>{p.id}</span>
             <div>
-              <div style={{fontFamily:"'Playfair Display',serif",fontSize:"18px",fontWeight:700}}>{p.name}<span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:"9px",fontWeight:400,color:C.textGhost,marginLeft:"8px"}}>{p.version}</span></div>
+              <div style={{fontFamily:"'Playfair Display',serif",fontSize:"18px",fontWeight:700}}>{p.link?<a href={p.link} target="_blank" rel="noopener noreferrer" style={{color:"inherit",textDecoration:"none",borderBottom:activeProject===i?`1px solid ${acc(p.accent,isDark)}`:"1px solid transparent",transition:"border-color 0.3s"}}>{p.name}<span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:"8px",marginLeft:"6px",opacity:0.5}}>↗</span></a>:p.name}<span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:"9px",fontWeight:400,color:C.textGhost,marginLeft:"8px"}}>{p.version}</span></div>
               <div style={{display:"flex",gap:"6px",marginTop:"6px",flexWrap:"wrap"}}>
                 {p.tags.map((tag,j)=>(<span key={j} className="tag-p" style={{borderColor:activeProject===i?acc(p.accent,isDark):C.borderLight,color:activeProject===i?acc(p.accent,isDark):C.textGhost}}>{tag}</span>))}
               </div>
@@ -261,8 +267,35 @@ export default function Portfolio() {
       </section>
 
       {/* ═══ DIAGONAL BREAK ═══ */}
-      <div style={{position:"relative",height:"130px",overflow:"hidden",background:`linear-gradient(135deg,${isDark?"rgba(255,51,102,0.02)":"rgba(255,51,102,0.03)"} 0%,${isDark?"rgba(0,255,136,0.02)":"rgba(0,200,120,0.03)"} 50%,${isDark?"rgba(0,212,255,0.02)":"rgba(0,180,220,0.03)"} 100%)`,width:"100%"}}>
-      <div className="diag-text" style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",fontFamily:"'Playfair Display',serif",fontSize:"clamp(40px,9vw,100px)",fontWeight:900,color:C.textUltra,whiteSpace:"nowrap",letterSpacing:"-2px"}}>CODE · CREATE · SHIP</div>        <svg style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}}><line x1="0" y1="100%" x2="100%" y2="0" stroke={C.border} strokeWidth="1"/><line x1="0" y1="0" x2="100%" y2="100%" stroke={C.border} strokeWidth="1"/></svg>
+      <div id="s-break" data-animate style={{position:"relative",height:"clamp(220px,30vw,360px)",overflow:"hidden",width:"100%",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:"clamp(4px,1vw,10px)"}} className={`vis-anim ${vis("s-break")?"show":""}`}>
+        {/* Background grid dots */}
+        <div style={{position:"absolute",inset:0,backgroundImage:`radial-gradient(circle,${isDark?"rgba(255,51,102,0.06)":"rgba(255,51,102,0.08)"} 1px,transparent 1px)`,backgroundSize:"32px 32px",animation:"grid-pulse 6s ease infinite",pointerEvents:"none"}}/>
+        {/* Diagonal lines */}
+        <svg style={{position:"absolute",inset:0,width:"100%",height:"100%",pointerEvents:"none"}}>
+          <line x1="0" y1="100%" x2="100%" y2="0" stroke={isDark?"rgba(255,51,102,0.06)":"rgba(255,51,102,0.08)"} strokeWidth="1"/>
+          <line x1="0" y1="0" x2="100%" y2="100%" stroke={isDark?"rgba(0,212,255,0.06)":"rgba(0,180,220,0.08)"} strokeWidth="1"/>
+          <line x1="50%" y1="0" x2="100%" y2="100%" stroke={isDark?"rgba(0,255,136,0.04)":"rgba(0,200,120,0.06)"} strokeWidth="1"/>
+          <line x1="0" y1="50%" x2="100%" y2="50%" stroke={C.border} strokeWidth="1" strokeDasharray="4 8"/>
+        </svg>
+        {/* Gradient overlays */}
+        <div style={{position:"absolute",inset:0,background:`linear-gradient(135deg,${isDark?"rgba(255,51,102,0.03)":"rgba(255,51,102,0.04)"} 0%,transparent 40%,${isDark?"rgba(0,212,255,0.03)":"rgba(0,180,220,0.04)"} 100%)`,pointerEvents:"none"}}/>
+        <div style={{position:"absolute",left:0,right:0,top:0,height:"1px",background:`linear-gradient(90deg,transparent,${acc("#ff3366",isDark)},transparent)`,opacity:0.3}}/>
+        <div style={{position:"absolute",left:0,right:0,bottom:0,height:"1px",background:`linear-gradient(90deg,transparent,${acc("#00d4ff",isDark)},transparent)`,opacity:0.3}}/>
+        {/* Main words */}
+        {[
+          {word:"CODE",color:"#ff3366",delay:"0s",dir:-1},
+          {word:"CREATE",color:"#00ff88",delay:"0.12s",dir:-1},
+          {word:"INNOVATE",color:"#00d4ff",delay:"0.24s",dir:-1}
+        ].map((item,i)=>(
+          <div key={item.word} className="break-row" style={{width:"100%",display:"flex",alignItems:"center",justifyContent:"center",gap:"clamp(12px,3vw,32px)",opacity:vis("s-break")?1:0,transform:vis("s-break")?`translateY(${scrollY*0.008*item.dir}px)`:`translateY(20px)`,transition:`opacity 0.9s cubic-bezier(0.16,1,0.3,1) ${item.delay}, transform 0.9s cubic-bezier(0.16,1,0.3,1) ${item.delay}`}}>
+            <div className="break-line" style={{height:"1px",flex:1,maxWidth:"100px",background:`linear-gradient(90deg,transparent,${acc(item.color,isDark)})`,opacity:0.3}}/>
+            <span className="break-word" style={{fontFamily:"'Playfair Display',serif",fontSize:"clamp(38px,9vw,100px)",fontWeight:900,letterSpacing:"-2px",color:C.textUltra,textTransform:"uppercase",lineHeight:1}} onMouseEnter={e=>{e.target.style.color=acc(item.color,isDark);e.target.style.textShadow=`0 0 40px ${acc(item.color,isDark)}22`}} onMouseLeave={e=>{e.target.style.color=C.textUltra;e.target.style.textShadow="none"}}>{item.word}</span>
+            <div className="break-line" style={{height:"1px",flex:1,maxWidth:"100px",background:`linear-gradient(270deg,transparent,${acc(item.color,isDark)})`,opacity:0.3}}/>
+          </div>
+        ))}
+        {/* Corner accents */}
+        <div style={{position:"absolute",top:"16px",left:"16px",width:"20px",height:"20px",borderTop:`1px solid ${acc("#ff3366",isDark)}`,borderLeft:`1px solid ${acc("#ff3366",isDark)}`,opacity:0.25}}/>
+        <div style={{position:"absolute",bottom:"16px",right:"16px",width:"20px",height:"20px",borderBottom:`1px solid ${acc("#00d4ff",isDark)}`,borderRight:`1px solid ${acc("#00d4ff",isDark)}`,opacity:0.25}}/>
       </div>
 
       {/* ═══ SKILLS ═══ */}
@@ -299,7 +332,7 @@ export default function Portfolio() {
 
       {/* ═══ FOOTER ═══ */}
       <footer style={{padding:"18px 20px",borderTop:`1px solid ${C.border}`,display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:"8px",width:"100%",transition:"border-color 0.5s"}}>
-        <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:"9px",letterSpacing:"2px",color:C.textFaint}}>© 2025 NICHOLAS NOGUEIRA</span>
+        <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:"9px",letterSpacing:"2px",color:C.textFaint}}>© 2026 NICHOLAS NOGUEIRA</span>
         <span style={{fontFamily:"'JetBrains Mono',monospace",fontSize:"9px",letterSpacing:"1px",color:C.textUltra}}>{t.footer}</span>
       </footer>
     </div>
