@@ -30,18 +30,18 @@ const T = {
 };
 
 const projects = [
-  { id: "01", name: "Iniciação Científica: BlindBrowser", version: "v2.0", descPt: "Sistema de navegação assistiva para deficientes visuais. Classificação de conteúdo com 72.3% de acurácia.", descEn: "Assistive web navigation for visually impaired. Content classification at 72.3% accuracy.", tags: ["Python", "NLP", "AI"], status: "completed", accent: "#00ff88", link: "https://github.com/NogTwoo/blindbrowser-v2" },
+  { id: "01", name: "Iniciação Científica: BlindBrowser", version: "v2.0", descPt: "Sistema de navegação assistiva para deficientes visuais. Classificação de conteúdo com ~90% de acurácia.", descEn: "Assistive web navigation for visually impaired. Content classification at ~90% accuracy.", tags: ["Java", "NLP", "AI","Python"], status: "completed", accent: "#00ff88", link: "https://github.com/NogTwoo/blindbrowser-v2" },
   { id: "02", name: "Assistente Virtual: Rosinha", version: "ChatBot", descPt: "Chatbot híbrido WhatsApp/Instagram. Regras + Claude API + triagem inteligente para atendente humano.", descEn: "Hybrid WhatsApp/Instagram chatbot. Rules + Claude API + smart escalation to human agents.", tags: ["FastAPI", "Claude API", "Make.com"], status: "inDev", accent: "#ff3366"},
-  { id: "03", name: "Projeto Low-Code: AutoMarketing", version: "Pipeline", descPt: "15min → 2min por post. Pipeline de automação Instagram com Google Forms, Make.com, Apify e Buffer.", descEn: "15min → 2min per post. Instagram automation pipeline with Google Forms, Make.com, Apify & Buffer.", tags: ["Make.com", "Apify", "Buffer"], status: "active", accent: "#00d4ff", link:"/arq_crm_automation.png"},
+  { id: "03", name: "Projeto Low-Code: AutoMarketing", version: "Pipeline", descPt: "15min → 2min por post. Pipeline de automação Instagram com Google Forms, Make.com (Plataforma No-Code), Apify e Buffer.", descEn: "15min → 2min per post. Instagram automation pipeline with Google Forms, Make.com (No-code Plataform), Apify & Buffer.", tags: ["Make.com", "Apify", "Buffer"], status: "active", accent: "#00d4ff", link:"/arq_crm_automation.png"},
   { id: "04", name: "Núcleo de Empreendedorismo de São Carlos", version: "Website", descPt: "Redesign do hub de empreendedorismo da USP São Carlos. De vitrine estática para plataforma interativa.", descEn: "Redesign of USP São Carlos entrepreneurship hub. From static showcase to interactive platform.", tags: ["Frontend", "UX/UI", "Branding"], status: "active", accent: "#ffaa00", link: "https://www.neu-sc.com/" },
   { id: "05", name: "Nova", version: "Social", descPt: "Rede social gamer com integração direta a jogos, insights de performance e conexão global.", descEn: "Gamer social network with direct game integration, performance insights, and global connection.", tags: ["PHP", "HTML", "CSS", "Games"], status: "paused", accent: "#aa66ff" }
 ];
 
 const skills = [
-  { name: "Python", level: 92 }, { name: "Java", level: 78 }, { name: "JavaScript", level: 85 },
-  { name: "React", level: 80 }, { name: "FastAPI", level: 88 }, { name: "Next.js", level: 72 },
-  { name: "Make.com", level: 95 }, { name: "Claude API", level: 90 }, { name: "Git", level: 82 },
-  { name: "PHP", level: 70 }, { name: "SQL", level: 75 }, { name: "CSS", level: 88 }
+  { name: "Python", level: 78 }, { name: "Java", level: 92 }, { name: "JavaScript", level: 85 },
+  { name: "React", level: 81 }, { name: "FastAPI", level: 88 }, { name: "Next.js", level: 79 },
+  { name: "No-Code Plataform", level: 87 }, { name: "Claude API", level: 91 }, { name: "Git", level: 77 },
+  { name: "PHP", level: 65 }, { name: "SQL", level: 70 }, { name: "CSS", level: 88 }
 ];
 
 const themes = {
@@ -228,7 +228,7 @@ export default function Portfolio() {
           <p style={{color:C.textDim,lineHeight:1.85,fontSize:"14px",fontFamily:"'Outfit',sans-serif"}}>{t.about}</p>
           <p style={{color:C.textMuted,lineHeight:1.85,fontSize:"14px",fontFamily:"'Outfit',sans-serif"}}>{t.aboutMore}</p>
           <div style={{display:"flex",gap:"24px",marginTop:"16px",flexWrap:"wrap"}}>
-            {[{n:"5+",l:lang==="pt"?"Projetos":"Projects"},{n:"3+",l:lang==="pt"?"Techs IA":"AI Techs"},{n:"72%",l:lang==="pt"?"Acurácia":"Accuracy"}].map((s,i)=>(
+            {[{n:"5+",l:lang==="pt"?"Projetos":"Projects"},{n:"3+",l:lang==="pt"?"Techs IA":"AI Techs"},{n:"~90%",l:lang==="pt"?"Acurácia":"Accuracy"}].map((s,i)=>(
               <div key={i}>
                 <div style={{fontFamily:"'Playfair Display',serif",fontSize:"26px",fontWeight:900}}>{s.n}</div>
                 <div style={{fontFamily:"'JetBrains Mono',monospace",fontSize:"9px",letterSpacing:"2px",color:C.textGhost,textTransform:"uppercase",marginTop:"3px"}}>{s.l}</div>
